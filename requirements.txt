@@ -1,0 +1,15 @@
+torch
+torchvision
+ultralytics
+flask
+opencv-python
+numpy
+Pillow
+transformers>=4.37.0
+accelerate>=0.26.0
+bitsandbytes>=0.41.0
+sentencepiece
+scikit-learn
+matplotlib
+tqdm
+huggingface-hub
