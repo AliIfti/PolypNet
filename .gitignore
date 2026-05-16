@@ -13,3 +13,4 @@ webapp/static/uploads/
 webapp/static/results/
 *.zip
 .env
+results/
