@@ -1,0 +1,15 @@
+yolo_dataset/
+seg_dataset/
+clf_dataset/
+checkpoints/
+*.pth
+*.pt
+runs/
+__pycache__/
+*.pyc
+*.log
+output/
+webapp/static/uploads/
+webapp/static/results/
+*.zip
+.env

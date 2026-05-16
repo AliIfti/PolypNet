@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PolypNet – AI Colonoscopy Analysis</title>
+  <meta name="description" content="PolypNet: AI-powered polyp detection, classification and segmentation for colonoscopy images." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">PolypNet</span>
+    <span class="brand-tag">AI Diagnostic System</span>
+  </div>
+  <div class="nav-links">
+    <a href="#how-it-works">How it works</a>
+    <a href="#upload-section" class="btn-nav">Analyze Image</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      Phase IV — BS Data Science · GIKI
+    </div>
+    <h1 class="hero-title">
+      AI-Powered<br/>
+      <span class="gradient-text">Polyp Detection</span><br/>
+      &amp; Analysis
+    </h1>
+    <p class="hero-sub">
+      PolypNet deploys a 6-stage deep learning pipeline — image validation,
+      CLAHE enhancement, YOLO detection, CNN classification, Attention U-Net
+      segmentation, and VLM clinical reporting — on every colonoscopy image
+      you upload.
+    </p>
+    <div class="hero-cta">
+      <a href="#upload-section" class="btn-primary">Start Analysis</a>
+      <a href="#how-it-works" class="btn-ghost">Learn More →</a>
+    </div>
+    <!-- Floating stats -->
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-val">6</span><span class="stat-lbl">Pipeline Stages</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">CNN Models</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-val">93.8%+</span><span class="stat-lbl">Detection Precision</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="scan-ring ring-1"></div>
+    <div class="scan-ring ring-2"></div>
+    <div class="scan-ring ring-3"></div>
+    <div class="scan-circle">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="55" stroke="#00d4b4" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <circle cx="60" cy="60" r="35" fill="#00d4b420"/>
+        <path d="M40 60 Q55 45 60 60 Q65 75 80 60" stroke="#00d4b4" stroke-width="2" fill="none"/>
+        <circle cx="60" cy="60" r="6" fill="#00d4b4"/>
+        <path d="M75 45 L80 40 M80 40 L75 40 M80 40 L80 45" stroke="#00d4b4" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ HOW IT WORKS ═══════════════════════════ -->
+<section id="how-it-works" class="steps-section">
+  <div class="section-header">
+    <span class="section-label">PIPELINE</span>
+    <h2>How PolypNet Works</h2>
+    <p>Six AI stages run automatically on every uploaded colonoscopy image.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-icon icon-validate">✓</div>
+      <div class="step-num">01</div>
+      <h3>Validation</h3>
+      <p>Heuristic + CNN check ensures the image is a valid colonoscopy frame before processing begins.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon icon-enhance">◈</div>
+      <div class="step-num">02</div>
+      <h3>CLAHE Enhancement</h3>
+      <p>Contrast Limited Adaptive Histogram Equalisation amplifies subtle mucosal structures.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon icon-detect">⬡</div>
+      <div class="step-num">03</div>
+      <h3>YOLO Detection</h3>
+      <p>YOLOv11 localises polyps with bounding boxes and confidence scores in real time.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon icon-classify">⊞</div>
+      <div class="step-num">04</div>
+      <h3>CNN Classification</h3>
+      <p>Ensemble of VGG16, ResNet50, EfficientNetB0 and InceptionV3 classifies Benign vs Malignant.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon icon-segment">◉</div>
+      <div class="step-num">05</div>
+      <h3>Segmentation</h3>
+      <p>Attention U-Net produces pixel-perfect masks highlighting the polyp region.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon icon-vlm">✦</div>
+      <div class="step-num">06</div>
+      <h3>Clinical Report</h3>
+      <p>VLM generates a structured clinical assessment including size, morphology and recommendations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ UPLOAD ═══════════════════════════ -->
+<section id="upload-section" class="upload-section">
+  <div class="section-header">
+    <span class="section-label">ANALYZE</span>
+    <h2>Upload Colonoscopy Image</h2>
+    <p>Accepted formats: PNG · JPG · JPEG · BMP · TIFF — max 16 MB</p>
+  </div>
+
+  <div class="upload-card" id="upload-card">
+    <!-- Drop zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div class="drop-icon">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="#00d4b4" stroke-width="1.5" stroke-dasharray="5 3"/>
+          <path d="M32 20 L32 44 M22 30 L32 20 L42 30" stroke="#00d4b4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="drop-text">Drag &amp; drop your image here</p>
+      <p class="drop-sub">or</p>
+      <label class="btn-upload" for="file-input">Browse File</label>
+      <input type="file" id="file-input" accept="image/*" hidden />
+    </div>
+
+    <!-- Preview -->
+    <div class="preview-zone hidden" id="preview-zone">
+      <img id="preview-img" src="" alt="Preview" />
+      <div class="preview-info">
+        <span id="preview-name"></span>
+        <span id="preview-size"></span>
+      </div>
+      <div class="preview-actions">
+        <button class="btn-primary" id="analyze-btn">Run Analysis</button>
+        <button class="btn-ghost" id="reset-btn">Choose Different</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress panel -->
+  <div class="progress-panel hidden" id="progress-panel">
+    <div class="progress-header">
+      <div class="progress-spinner"></div>
+      <span id="progress-label">Initialising…</span>
+    </div>
+    <div class="progress-steps">
+      <div class="prog-step" id="p-validate"><span class="prog-icon">○</span> Validating image</div>
+      <div class="prog-step" id="p-enhance"><span class="prog-icon">○</span> CLAHE enhancement</div>
+      <div class="prog-step" id="p-detect"><span class="prog-icon">○</span> YOLO detection</div>
+      <div class="prog-step" id="p-classify"><span class="prog-icon">○</span> CNN classification</div>
+      <div class="prog-step" id="p-segment"><span class="prog-icon">○</span> Attention U-Net segmentation</div>
+      <div class="prog-step" id="p-vlm"><span class="prog-icon">○</span> Generating clinical report</div>
+    </div>
+  </div>
+
+  <!-- Error banner -->
+  <div class="error-banner hidden" id="error-banner">
+    <span class="error-icon">⚠</span>
+    <span id="error-msg">An error occurred.</span>
+    <button id="error-close">✕</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span class="brand-dot"></span>
+      <strong>PolypNet</strong>
+    </div>
+    <p class="footer-note">
+      BSc FYP Phase IV · Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI)<br/>
+      <strong>Group Members:</strong> Usman Asif · Ali Iftikhar · Ahmed Fraz<br/>
+      Advisor: <strong>Dr. Zoya</strong> &nbsp;·&nbsp; Co-Advisor: <strong>Dr. Muhammad Hanif</strong>
+    </p>
+    <p class="footer-disclaimer">
+      ⚠ For research and demonstration only. Not intended for clinical diagnosis.
+    </p>
+  </div>
+</footer>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

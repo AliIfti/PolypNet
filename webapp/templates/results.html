@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PolypNet – Analysis Results</title>
+  <meta name="description" content="PolypNet AI analysis results: detection, classification, segmentation and clinical report." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="results-body">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">PolypNet</span>
+    <span class="brand-tag">AI Diagnostic System</span>
+  </div>
+  <div class="nav-links">
+    <a href="/" class="btn-nav">← New Analysis</a>
+  </div>
+</nav>
+
+<!-- RESULTS HEADER -->
+<section class="results-header">
+  <div class="rh-inner">
+    <div class="rh-badge" id="rh-badge">Processing…</div>
+    <h1>Analysis Report</h1>
+    <p id="rh-sub">Colonoscopy Image · PolypNet AI Pipeline</p>
+  </div>
+</section>
+
+<!-- RESULTS GRID -->
+<main class="results-main" id="results-container">
+
+  <!-- Loading state -->
+  <div class="loading-state" id="loading-state">
+    <div class="big-spinner"></div>
+    <p>Running full pipeline…</p>
+  </div>
+
+  <!-- Results populated by JS -->
+  <div id="results-grid" class="results-grid hidden">
+
+    <!-- Row 1: Original + Enhanced -->
+    <div class="result-card" id="card-original">
+      <div class="card-header">
+        <span class="card-num">01</span>
+        <h2>Original Image</h2>
+        <span class="card-badge badge-blue">Input</span>
+      </div>
+      <div class="card-img-wrap">
+        <img id="img-original" src="" alt="Original colonoscopy image" />
+      </div>
+    </div>
+
+    <div class="result-card" id="card-enhanced">
+      <div class="card-header">
+        <span class="card-num">02</span>
+        <h2>CLAHE Enhanced</h2>
+        <span class="card-badge badge-teal">Preprocessed</span>
+      </div>
+      <div class="card-img-wrap">
+        <img id="img-enhanced" src="" alt="CLAHE enhanced image" />
+      </div>
+      <div class="card-note">Contrast Limited Adaptive Histogram Equalisation applied in LAB colour space.</div>
+    </div>
+
+    <!-- Row 2: Detection + Classification -->
+    <div class="result-card" id="card-detection">
+      <div class="card-header">
+        <span class="card-num">03</span>
+        <h2>YOLO Detection</h2>
+        <span class="card-badge badge-yellow">Detection</span>
+      </div>
+      <div class="card-img-wrap">
+        <img id="img-detection" src="" alt="YOLO detection output" />
+      </div>
+      <div class="detect-stats" id="detect-stats"></div>
+    </div>
+
+    <div class="result-card" id="card-classify">
+      <div class="card-header">
+        <span class="card-num">04</span>
+        <h2>Classification</h2>
+        <span class="card-badge badge-purple">CNN Ensemble</span>
+      </div>
+      <div class="classify-verdict" id="classify-verdict"></div>
+      <div class="model-bars" id="model-bars"></div>
+    </div>
+
+    <!-- Row 3: Segmentation mask + Overlay -->
+    <div class="result-card" id="card-mask">
+      <div class="card-header">
+        <span class="card-num">05</span>
+        <h2>Segmentation Mask</h2>
+        <span class="card-badge badge-green">Attention U-Net</span>
+      </div>
+      <div class="card-img-wrap">
+        <img id="img-mask" src="" alt="Segmentation mask" />
+      </div>
+      <div class="card-note" id="seg-note"></div>
+    </div>
+
+    <div class="result-card" id="card-overlay">
+      <div class="card-header">
+        <span class="card-num">05b</span>
+        <h2>Segmentation Overlay</h2>
+        <span class="card-badge badge-green">Polyp Region</span>
+      </div>
+      <div class="card-img-wrap">
+        <img id="img-overlay" src="" alt="Segmentation overlay" />
+      </div>
+    </div>
+
+    <!-- Row 4: Clinical Report – full width -->
+    <div class="result-card card-full" id="card-vlm">
+      <div class="card-header">
+        <span class="card-num">06</span>
+        <h2>Clinical Report</h2>
+        <span class="card-badge badge-teal">VLM Generated</span>
+      </div>
+      <pre class="clinical-text" id="clinical-text"></pre>
+    </div>
+
+  </div><!-- /results-grid -->
+
+  <!-- Validation failure state -->
+  <div id="invalid-state" class="invalid-state hidden">
+    <div class="invalid-icon">⚠</div>
+    <h2>Invalid Image Detected</h2>
+    <p id="invalid-reason">The uploaded image does not appear to be a colonoscopy image.</p>
+    <a href="/" class="btn-primary">Upload Another Image</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand"><span class="brand-dot"></span><strong>PolypNet</strong></div>
+    <p class="footer-note">
+      BSc FYP Phase IV · Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI)<br/>
+      <strong>Group Members:</strong> Usman Asif · Ali Iftikhar · Ahmed Fraz<br/>
+      Advisor: <strong>Dr. Zoya</strong> &nbsp;·&nbsp; Co-Advisor: <strong>Dr. Muhammad Hanif</strong>
+    </p>
+    <p class="footer-disclaimer">
+      ⚠ For research and demonstration only. Not intended for clinical diagnosis.
+    </p>
+  </div>
+</footer>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
