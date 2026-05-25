@@ -12,7 +12,7 @@ detection, segmentation and malignancy classification from colonoscopy images.
 6. LLaVA-1.5 Clinical Report Generation (7B parameter VLM)
 
 ## Model Weights
-(https://drive.google.com/file/d/1pIT8MWJ7Nq5H-cTldy3QIXAIj6pCah1v/view?usp=sharing)
+https://drive.google.com/file/d/1pIT8MWJ7Nq5H-cTldy3QIXAIj6pCah1v/view?usp=sharing
 Place downloaded checkpoints/ folder in: ~/Desktop/fyp/fyp/
 
 ## Setup
