@@ -1,4 +1,4 @@
-```markdown
+
 # PolypNet
 ### AI-Powered Colorectal Polyp Detection, Segmentation & Classification
 
