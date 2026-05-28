@@ -1,7 +1,3 @@
-Here is exactly what to paste into the GitHub editor:
-
----
-
 ```markdown
 # PolypNet
 ### AI-Powered Colorectal Polyp Detection, Segmentation & Classification
