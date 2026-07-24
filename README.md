@@ -130,10 +130,7 @@ PolypNet/
 
 ## Team
 
-| Name | Student ID |
-|------|------------|
-| Usman Asif | 2022612 |
-| Ahmad Fraz | 2022065 |
+
 | Ali Iktikhar | 2022341 |
 
 **Supervisor:** Dr. Zoya  
